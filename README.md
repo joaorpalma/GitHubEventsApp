@@ -4,3 +4,4 @@ Github Events POC
 - MVVM
 - Service Layer
 - Command Pattern
+- Dependency Injection
