@@ -1,1 +1,1 @@
-GitHubEventsApp
+GithubEvents
