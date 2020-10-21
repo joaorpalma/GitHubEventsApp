@@ -54,9 +54,9 @@ class EventListViewController: BaseViewController<EventListViewModel> {
     private func _configureTableViewRefreshControl() {
         _tableView.refreshControl = _refreshControl
         _refreshControl.addTarget(self, action: #selector(_refreshEvents), for: .valueChanged)
-        viewModel.isBusy.bind(onNext: { isBusy in
+        viewModel.isBusy.bind(onNext: { [weak self] isBusy in
             if !isBusy {
-                self._refreshControl.endRefreshing()
+                self?._refreshControl.endRefreshing()
             }
         }).disposed(by: _disposeBag)
     }

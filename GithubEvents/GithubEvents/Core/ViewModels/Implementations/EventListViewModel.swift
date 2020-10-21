@@ -37,7 +37,7 @@ class EventListViewModel: ViewModelBase {
         isBusy.onNext(true)
 
         DispatchQueue.main.async {
-            _ = self._eventWebService.getEvents(completion: { events in self._eventsCompletion(events) })
+            _ = self._eventWebService.getEvents(completion: { [weak self] events in self?._eventsCompletion(events) })
         }
     }
 
