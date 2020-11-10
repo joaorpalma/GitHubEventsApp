@@ -13,7 +13,7 @@ class EventWebServiceTests: XCTestCase {
     let eventWebService: EventWebService = DiContainer.resolve()
 
     func testFetchedEventListCountMustBe30() throws {
-        _ = eventWebService.getEvents { result in
+       eventWebService.getEvents { result in
             if case .success(let eventStructList) = result {
                 XCTAssert(eventStructList?.count == 30)
             }

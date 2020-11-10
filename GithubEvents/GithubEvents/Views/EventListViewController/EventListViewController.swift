@@ -78,7 +78,7 @@ class EventListViewController: BaseViewController<EventListViewModel> {
     }
 
     private func _selectedEventAtIndex(_ index: Int) {
-        viewModel.openEventDetailCommand.execute(index)
+        viewModel.openEventDetailCommand.executeIf(index)
     }
 
     @objc private func _refreshEvents(_ sender: AnyObject) {

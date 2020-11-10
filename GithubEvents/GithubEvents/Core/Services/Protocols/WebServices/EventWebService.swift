@@ -6,6 +6,7 @@
 //
 
 protocol EventWebService {
+    @discardableResult
     func getEvents(completion: @escaping CompletionWebHandler<[EventStruct]>) -> String
     //swiftlint:disable identifier_name
     func cancelRequest(id: String)

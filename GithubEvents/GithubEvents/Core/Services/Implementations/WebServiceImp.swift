@@ -18,7 +18,7 @@ class WebServiceImp: WebService {
         _dialogService = dialogService
     }
 
-    func getRequest<T>(requestUri: String, completion: @escaping CompletionWebHandler<T>) -> String where T: Decodable, T: Encodable {
+    func getRequest<T: Codable>(requestUri: String, completion: @escaping CompletionWebHandler<T>) -> String {
         let requestId = _networking.get(_baseUrl + requestUri) { [weak self] result in
             self?._handleJSONResult(result, completion)
         }
